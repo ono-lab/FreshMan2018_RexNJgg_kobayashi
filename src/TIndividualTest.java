@@ -30,7 +30,6 @@ class TIndividualTest {
 	@Test
 	void testwriteTo() {
 		TIndividual id1 = new TIndividual();
-
 		id1.setEvaluationValue(1);
 		id1.getTVector().setDemension(5);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
