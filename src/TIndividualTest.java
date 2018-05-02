@@ -96,14 +96,23 @@ class TIndividualTest {
 
 	@Test
 	void testtoString() {
+		final double eval = 1.0;
+
+		StringBuilder cmpstr = new StringBuilder();
 		TIndividual id1 = new TIndividual();
-		id1.setEvaluationValue(1);
-		id1.getTVector().setDemension(5);
+
+		//setEvaluationValue
+		id1.setEvaluationValue(eval);
+		cmpstr.append(eval+"\n");
+
+		//setTVector
+		id1.getTVector().setDemension(10000);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
 			id1.getTVector().setElement(i, i);
+			cmpstr.append((double)i+ " ");
 		}
 
-		assertEquals("1.0\n0.0 1.0 2.0 3.0 4.0 ", id1.toString());
+		assertEquals(cmpstr.toString(), id1.toString());
 	}
 
 	@Test

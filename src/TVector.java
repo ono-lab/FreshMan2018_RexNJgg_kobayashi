@@ -54,12 +54,12 @@ public class TVector {
 
 	@Override
 	public String toString() {
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		for(int i = 0; i < fData.length; i++) {
-			str += fData[i] + " ";
+			str.append(fData[i]+" ");
 		}
 
-		return str;
+		return str.toString();
 	}
 
 	@Override

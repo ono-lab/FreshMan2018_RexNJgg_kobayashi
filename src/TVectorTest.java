@@ -98,14 +98,17 @@ class TVectorTest {
 	}
 
 	@Test
-	void testtoString() {
+	void testtoString() { //0.33s -> (StringBuilder)0.02s
+		StringBuilder cmpstr = new StringBuilder();
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+
+		v1.setDemension(10000);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
+			cmpstr.append((double)i+" ");
 		}
 
-		assertEquals("0.0 1.0 2.0 3.0 4.0 ", v1.toString());
+		assertEquals(cmpstr.toString(), v1.toString());
 	}
 
 	@Test
