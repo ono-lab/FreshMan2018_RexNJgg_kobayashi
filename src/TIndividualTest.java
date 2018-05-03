@@ -14,7 +14,7 @@ class TIndividualTest {
 	@Test
 	void testclone() {
 		TIndividual id1 = new TIndividual();
-		id1.setEvaluationValue(1);
+		id1.setEvaluationValue(1.0);
 
 		id1.getTVector().setDemension(5);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
@@ -22,6 +22,23 @@ class TIndividualTest {
 		}
 
 		TIndividual id2 = id1.clone();
+
+		assertEquals(id1.getEvaluationValue(), id2.getEvaluationValue());
+		assertEquals(true, id1.getTVector().equals(id2.getTVector()));
+	}
+
+	@Test
+	void testcopyFrom() {
+		TIndividual id1 = new TIndividual();
+		id1.setEvaluationValue(1.0);
+
+		id1.getTVector().setDemension(5);
+		for(int i = 0; i < id1.getTVector().getDimension(); i++) {
+			id1.getTVector().setElement(i, i);
+		}
+
+		TIndividual id2 = new TIndividual();
+		id2.copyFrom(id1);
 
 		assertEquals(id1.getEvaluationValue(), id2.getEvaluationValue());
 		assertEquals(true, id1.getTVector().equals(id2.getTVector()));
@@ -100,6 +117,8 @@ class TIndividualTest {
 
 		StringBuilder cmpstr = new StringBuilder();
 		TIndividual id1 = new TIndividual();
+
+		assertEquals(Double.toString(Double.NaN)+"\n", id1.toString());
 
 		//setEvaluationValue
 		id1.setEvaluationValue(eval);

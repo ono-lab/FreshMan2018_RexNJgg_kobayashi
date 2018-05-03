@@ -3,19 +3,38 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class TIndividual {
+	/**  評価値 */
 	private double fEvaluationValue;	//+∞で実行不可能
+	/** 実数値ベクトル */
 	private TVector fVector;
 
+	/**
+	 * コンストラクタ
+	 */
 	public TIndividual() {
 		fEvaluationValue = Double.NaN;
 		fVector = new TVector();
 	}
 
+	/**
+	 * コピーコンストラクタ
+	 * @param src 実数値ベクトル
+	 */
 	public TIndividual(TIndividual src) {
 		fEvaluationValue = src.fEvaluationValue;
 		fVector = new TVector(src.fVector);
 	}
 
+	public TIndividual copyFrom(TIndividual src) {
+		setEvaluationValue(src.fEvaluationValue);
+		fVector.copyFrom(src.fVector);
+
+		return this;
+	}
+
+	/**
+	 * 新しくTindividualを生成する
+	 */
 	@Override
 	public TIndividual clone() {
 		return new TIndividual(this);

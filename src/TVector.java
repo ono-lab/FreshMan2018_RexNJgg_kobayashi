@@ -6,6 +6,9 @@ public class TVector {
 	private static double EPS = 1e-10;
 	private double [] fData;
 
+	/**
+	 * コンストラクタ
+	 */
 	public TVector() {
 		fData = new double[0];
 	}
@@ -106,8 +109,17 @@ public class TVector {
 		return Math.sqrt(sum);
 	}
 
+	/**
+	 * ベクトルの正規化
+	 * @return 正規化されたベクトル
+	 * @throws ArithmeticException ゼロ除算を行った場合
+	 */
 	public TVector normalize() {
 		double l2norm = calcurateL2Norm();
+
+		if(Math.abs(l2norm) < EPS) {
+			throw new ArithmeticException();
+		}
 
 		for(int i = 0; i < fData.length; i++) {
 			fData[i] = fData[i]/l2norm;
