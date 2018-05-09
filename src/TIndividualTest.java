@@ -16,7 +16,7 @@ class TIndividualTest {
 		TIndividual id1 = new TIndividual();
 		id1.setEvaluationValue(1.0);
 
-		id1.getTVector().setDemension(5);
+		id1.getTVector().setDimension(5);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
 			id1.getTVector().setElement(i, i);
 		}
@@ -32,7 +32,7 @@ class TIndividualTest {
 		TIndividual id1 = new TIndividual();
 		id1.setEvaluationValue(1.0);
 
-		id1.getTVector().setDemension(5);
+		id1.getTVector().setDimension(5);
 		for(int i = 0; i < id1.getTVector().getDimension(); i++) {
 			id1.getTVector().setElement(i, i);
 		}
@@ -48,7 +48,7 @@ class TIndividualTest {
 	void testwriteTo() {
 		TIndividual id1 = new TIndividual();
 		id1.setEvaluationValue(1);
-		id1.getTVector().setDemension(5);
+		id1.getTVector().setDimension(5);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
 			id1.getTVector().setElement(i, i);
 		}
@@ -82,7 +82,7 @@ class TIndividualTest {
 		TIndividual id2 = new TIndividual();
 
 		id1.setEvaluationValue(1);
-		id1.getTVector().setDemension(5);
+		id1.getTVector().setDimension(5);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
 			id1.getTVector().setElement(i, i);
 		}
@@ -125,7 +125,7 @@ class TIndividualTest {
 		cmpstr.append(eval+"\n");
 
 		//setTVector
-		id1.getTVector().setDemension(10000);
+		id1.getTVector().setDimension(10000);
 		for(int i = 0; i < id1.getTVector().getDimension();  i++) {
 			id1.getTVector().setElement(i, i);
 			cmpstr.append((double)i+ " ");

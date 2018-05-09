@@ -14,7 +14,7 @@ class TVectorTest {
 	@Test
 	void testcopyFrom() {
 		TVector v1 = new TVector();
-		v1.setDemension(10);
+		v1.setDimension(10);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 		}
@@ -27,7 +27,7 @@ class TVectorTest {
 	@Test
 	void testclone() {
 		TVector v1 = new TVector();
-		v1.setDemension(10);
+		v1.setDimension(10);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 		}
@@ -39,7 +39,7 @@ class TVectorTest {
 	@Test
 	void testwriteTo() throws IOException{
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 		}
@@ -69,7 +69,7 @@ class TVectorTest {
 	@Test
 	void testreadFrom() throws IOException{
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		TVector v2 = new TVector();
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
@@ -102,7 +102,7 @@ class TVectorTest {
 		StringBuilder cmpstr = new StringBuilder();
 		TVector v1 = new TVector();
 
-		v1.setDemension(10000);
+		v1.setDimension(10000);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 			cmpstr.append((double)i+" ");
@@ -115,8 +115,8 @@ class TVectorTest {
 	void testequals() {
 		TVector v1 = new TVector();
 		TVector v2 = new TVector();
-		v1.setDemension(10);
-		v2.setDemension(10);
+		v1.setDimension(10);
+		v2.setDimension(10);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 			v2.setElement(i, i);
@@ -129,8 +129,8 @@ class TVectorTest {
 	void testadd() {
 		TVector v1 = new TVector();
 		TVector v2 = new TVector();
-		v1.setDemension(10);
-		v2.setDemension(10);
+		v1.setDimension(10);
+		v2.setDimension(10);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 			v2.setElement(i, 2*i);
@@ -144,8 +144,8 @@ class TVectorTest {
 	void testsub() {
 		TVector v1 = new TVector();
 		TVector v2 = new TVector();
-		v1.setDemension(10);
-		v2.setDemension(10);
+		v1.setDimension(10);
+		v2.setDimension(10);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 			v2.setElement(i, 2*i);
@@ -158,7 +158,7 @@ class TVectorTest {
 	@Test
 	void testcalcurateL2Norm() {
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, 0.3);
 		}
@@ -169,7 +169,7 @@ class TVectorTest {
 	@Test
 	void testnormalize() {
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		TVector v2 = new TVector(v1);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, 1);
@@ -182,7 +182,7 @@ class TVectorTest {
 	@Test
 	void testInnerProduct() {
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 		}
@@ -194,7 +194,7 @@ class TVectorTest {
 	@Test
 	void testscalar() {
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		TVector v2 = new TVector(v1);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
@@ -207,7 +207,7 @@ class TVectorTest {
 	@Test
 	void testelementwiseProduct() {
 		TVector v1 = new TVector();
-		v1.setDemension(5);
+		v1.setDimension(5);
 		TVector v2 = new TVector(v1);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
@@ -226,21 +226,21 @@ class TVectorTest {
 	@Test
 	void testsetDimension() {
 		TVector v1 = new TVector();
-		v1.setDemension(10);
+		v1.setDimension(10);
 		assertEquals(10,  v1.getDimension());
 	}
 
 	@Test
 	void testgetElement() {
 		TVector v1 = new TVector();
-		v1.setDemension(10);
+		v1.setDimension(10);
 		assertEquals(0, v1.getElement(3));
 	}
 
 	@Test
 	void testsetElement() {
 		TVector v1 = new TVector();
-		v1.setDemension(10);
+		v1.setDimension(10);
 		for(int i = 0; i < v1.getDimension(); i++) {
 			v1.setElement(i, i);
 		}

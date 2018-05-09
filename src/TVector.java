@@ -47,7 +47,7 @@ public class TVector {
 
 	public void readFrom(BufferedReader br)throws IOException{
 		int dimension = Integer.parseInt(br.readLine());
-		setDemension(dimension);
+		setDimension(dimension);
 
 		String[] tokens = br.readLine().split(" ");
 		for(int i = 0; i < dimension; i++) {
@@ -160,7 +160,7 @@ public class TVector {
 		return fData.length;
 	}
 
-	public void setDemension(int dimension) {
+	public void setDimension(int dimension) {
 		if(fData.length != dimension) {
 			fData = new double[dimension];
 		}
